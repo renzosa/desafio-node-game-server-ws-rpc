@@ -1,0 +1,28 @@
+{
+  "name": "desafio-node",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:pm2": "pm2 start ecosystem.config.js",
+    "docker-build": "docker buildx build -t game-server .",
+    "docker-run": "docker run -p 3000:3000 game-server",
+    "client": "node websocket-client-node/client.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "json-rpc-2.0": "^1.7.0",
+    "readline-sync": "^1.4.10",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "pm2": "^5.2.0",
+    "supertest": "^7.0.0"
+  }
+}
