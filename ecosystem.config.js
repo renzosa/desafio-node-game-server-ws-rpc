@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'game-server',
-      script: './src/server.js',
+      script: './dist/server.js',
       instances: 'max',
       exec_mode: 'cluster',
       env: {

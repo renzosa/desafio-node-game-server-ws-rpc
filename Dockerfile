@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 # Copiando os arquivos necessários
 COPY package*.json ./
+COPY tsconfig.json ./
 COPY ecosystem.config.js ./
 COPY src/ ./src
 
@@ -15,8 +16,8 @@ RUN npm install --global pm2
 # Instalando as dependências
 RUN npm install
 
-# # Compilando o código TypeScript (se for o caso)
-# RUN npm run build
+# Compilando o código TypeScript
+RUN npm run build
 
 # Expondo a porta 3000
 EXPOSE 3000

@@ -1,9 +1,9 @@
-const ActionService = require('../src/services/ActionService');
-const InMemoryDatabase = require('../src/services/InMemoryDatabase');
+import ActionService from '../src/services/ActionService';
+import InMemoryDatabase from '../src/services/InMemoryDatabase';
 
 describe('ActionService', () => {
-  let actionService;
-  let database;
+  let actionService: ActionService;
+  let database: InMemoryDatabase;
 
   beforeEach(() => {
     database = new InMemoryDatabase();

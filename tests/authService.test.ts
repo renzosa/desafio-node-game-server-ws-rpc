@@ -1,9 +1,9 @@
-const AuthService = require('../src/services/AuthService');
-const InMemoryDatabase = require('../src/services/InMemoryDatabase');
+import AuthService from '../src/services/AuthService';
+import InMemoryDatabase from '../src/services/InMemoryDatabase';
 
 describe('AuthService', () => {
-  let authService;
-  let database;
+  let authService: AuthService;
+  let database: InMemoryDatabase;
 
   beforeEach(() => {
     database = new InMemoryDatabase();
@@ -31,7 +31,7 @@ describe('AuthService', () => {
 
   test('should logout successfully with correct username and token', () => {
     const loginResponse = authService.login('renzo', '123mudar');
-    const token = loginResponse.token;
+    const token = loginResponse.token as string;
     const logoutResponse = authService.logout('renzo', token);
     expect(logoutResponse.success).toBe(true);
     expect(logoutResponse.message).toBe('Logout successful');
@@ -39,7 +39,7 @@ describe('AuthService', () => {
 
   test('should fail logout with incorrect token', () => {
     const loginResponse = authService.login('renzo', '123mudar');
-    const logoutResponse = authService.logout('renzo', loginResponse.token + 'invalidToken');
+    const logoutResponse = authService.logout('renzo', (loginResponse.token as string) + 'invalidToken');
     expect(logoutResponse.success).toBe(false);
     expect(logoutResponse.message).toBe('Not authenticated');
   });
