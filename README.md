@@ -1,6 +1,6 @@
 # Desafio Desenvolvedor Back-End
 
-### Servidor de jogos utilizando Nodem WebSocket e RPC
+### Servidor de jogos utilizando Node, WebSocket e RPC
 
 *Requisitos*
   1. Aplicação NodeJs, possibilitando login passando usuário e senha. Não precisa de banco de dados, porde armazenar em memoria os dados do usuário;
